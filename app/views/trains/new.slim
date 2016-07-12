@@ -1,0 +1,10 @@
+h3
+  ' Create New Train
+
+= form_for :train, url: trains_path do |f|
+  p
+    = f.label 'Select train type:'
+    = f.select :train_type, options_for_select(['Passenger', 'Cargo'])
+    = f.label 'Choose number of coaches:'
+    = f.number_field(:coaches_number, in: 8..20, step: 1, value: 12)
+    = f.submit 'Create'

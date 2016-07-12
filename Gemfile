@@ -25,7 +25,7 @@ gem 'slim-rails'
 group :development do
   gem 'better_errors'
   gem 'foreman'
-  gem 'hub', :require=>nil
+  gem 'hub', require: nil
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
