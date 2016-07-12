@@ -1,0 +1,23 @@
+table 
+  tr
+    th
+      'Train number
+    th
+      'Train type
+    th
+      'Coaches
+    th colspan=2
+      'Actions
+
+  - @trains.each do |train|
+    tr
+      td
+        = train.id
+      td
+        = train.train_type
+      td
+        = train.coaches_number
+      td
+        = link_to 'edit', edit_train_path(train)
+      td
+        = link_to 'delete', train_path(train), method: :delete, data: { confirm: 'Are you sure?' }

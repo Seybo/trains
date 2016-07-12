@@ -1,3 +1,3 @@
 class Train < ActiveRecord::Base
-  belongs_to :route
+  validates :coaches_number, :train_type, presence: true
 end
