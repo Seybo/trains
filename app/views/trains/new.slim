@@ -1,7 +1,7 @@
 h3
   ' Create New Train
 
-= form_for :train, url: trains_path do |f|
+= form_for :train do |f|
   p
     = f.label 'Select train type:'
     = f.select :train_type, options_for_select(['Passenger', 'Cargo'])
