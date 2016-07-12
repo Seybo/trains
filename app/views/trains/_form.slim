@@ -1,19 +1,13 @@
-= form_for @train do |f|
+= simple_form_for @train do |f|
 
-  - if @train.errors.any?
-    h2 
-      = pluralize(@train.errors.count, "error")
-      '  prevented this train from saving
-    ul
-      - @train.errors.full_messages.each do |msg|
-        li
-          = msg
+    / = f.label 'Select train type:'
+    / = f.select :train_type, options_for_select(['Passenger', 'Cargo'])
+    / = f.label 'Choose number of coaches:'
+    / = f.number_field(:coaches_number, in: 8..20, step: 1, value: 12)
+    / = f.submit
+    = f.input :train_type
+    = f.input :coaches_number, label: 'Number of coaches:', collection: 8..20, selected: 12
+    = f.button :submit
 
-  p
-    = f.label 'Select train type:'
-    = f.select :train_type, options_for_select(['Passenger', 'Cargo'])
-    = f.label 'Choose number of coaches:'
-    = f.number_field(:coaches_number, in: 8..20, step: 1, value: 12)
-    = f.submit
 
 = link_to 'Trains index', trains_path
