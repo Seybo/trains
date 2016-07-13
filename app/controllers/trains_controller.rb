@@ -1,4 +1,5 @@
 class TrainsController < ApplicationController
+
   def index
     @trains = Train.all  
   end
@@ -35,6 +36,11 @@ class TrainsController < ApplicationController
     end   
   end
 
+  def set_speed(speed)
+    @train = Train.find(params[:id])
+    @train.speed = speed    
+  end
+
   def destroy
     @train = Train.find(params[:id])
     @train.destroy
@@ -45,6 +51,6 @@ class TrainsController < ApplicationController
   private
   
   def train_params
-    params.require(:train).permit(:train_type, :coaches_number)
+    params.require(:train).permit(:train_type, :coaches_number, :speed)
   end
 end

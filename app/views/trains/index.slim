@@ -6,6 +6,8 @@ table
       'Train type
     th
       'Coaches
+    th
+      'Current speed
     th colspan=2
       'Actions
 
@@ -17,6 +19,8 @@ table
         = train.train_type
       td
         = train.coaches_number
+      td
+        = train.speed
       td
         = link_to 'edit', edit_train_path(train)
       td
