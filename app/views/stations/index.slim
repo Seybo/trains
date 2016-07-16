@@ -1,0 +1,19 @@
+table 
+  tr
+    th
+      'Number
+    th
+      'Name
+    th colspan=2
+      'Actions
+
+  - @stations.each do |station|
+    tr
+      td
+        = station.id
+      td
+        = station.name
+      td
+        = link_to 'edit', edit_station_path(station)
+      td
+        = link_to 'delete', station_path(station), method: :delete, data: { confirm: 'Are you sure?' }

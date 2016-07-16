@@ -1,5 +1,4 @@
 class TrainsController < ApplicationController
-
   def index
     @trains = Train.all  
   end
@@ -36,16 +35,23 @@ class TrainsController < ApplicationController
     end   
   end
 
-  def set_speed(speed)
-    @train = Train.find(params[:id])
-    @train.speed = speed    
-  end
-
   def destroy
     @train = Train.find(params[:id])
     @train.destroy
     
     redirect_to trains_path    
+  end
+
+  # def add_coach
+  #   @train.coaches_number += 1 if @train.speed == 0
+  # end
+
+  # def remove_coach
+  #   @train.coaches_number -= 1 if @train.speed == 0
+  # end
+
+  def show_station(which_station)
+    
   end
 
   private
