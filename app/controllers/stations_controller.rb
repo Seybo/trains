@@ -38,20 +38,18 @@ class StationsController < ApplicationController
   def destroy
     @station = Station.find(params[:id])
     @station.destroy
-    
+
     redirect_to stations_path
   end
 
   def show_trains(type)
-    
   end
 
   def send_train
-    
   end
 
   private
-  
+
   def station_params
     params.require(:station).permit(:name)
   end

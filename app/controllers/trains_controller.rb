@@ -32,14 +32,14 @@ class TrainsController < ApplicationController
       redirect_to @train
     else
       render "edit"
-    end   
+    end
   end
 
   def destroy
     @train = Train.find(params[:id])
     @train.destroy
-    
-    redirect_to trains_path    
+
+    redirect_to trains_path
   end
 
   # def add_coach
@@ -51,11 +51,10 @@ class TrainsController < ApplicationController
   # end
 
   def show_station(which_station)
-    
   end
 
   private
-  
+
   def train_params
     params.require(:train).permit(:train_type, :coaches_number, :speed)
   end
