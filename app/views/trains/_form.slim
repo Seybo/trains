@@ -1,9 +1,10 @@
 = simple_form_for @train do |f|
 
-    = f.input :train_type, collection: ['Passenger', 'Cargo'], selected: 'Passenger'
-    = f.input :coaches_number, label: 'Number of coaches:', collection: 8..20, selected: 12
-    = f.input :speed, as: :range, label: 'Set current speed:', input_html: { oninput: "train_speed_out.value = train_speed.value", min: 0, max: 80, step: 5, value: @train.speed}
-    input class="class1" name="speed_output" id="train_speed_out" value=@train.speed
-    br
-    = f.button :submit
+  = f.input :train_type, collection: ['Passenger', 'Cargo'], selected: 'Passenger'
+  = f.input :coaches_number, label: 'Number of coaches:', collection: 8..20, selected: 12
+  = f.input :speed, as: :range, label: 'Set current speed:', input_html: { oninput: "train_speed_out.value = train_speed.value", min: 0, max: 80, step: 5, value: @train.speed}
+  input class="class1" name="speed_output" id="train_speed_out" value=@train.speed
+  br
+  = f.button :submit
+
 = link_to 'Trains index', trains_path

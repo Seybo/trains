@@ -1,4 +1,4 @@
-inherit_from: .rubocop_todo.yml
+# inherit_from: .rubocop_todo.yml
 AllCops:
   Include:
     - '**/Gemfile'
@@ -8,10 +8,14 @@ AllCops:
    - 'db/schema.rb'
    - 'db/**/*'
    - 'vendor/bundle/**/*'
-   - 'app/models/user.rb'
+
+  DisplayCopNames: true
 
 Metrics/LineLength:
   Enabled: false
 
 Style/Documentation:
   Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes

@@ -21,7 +21,7 @@ class StationsController < ApplicationController
     if @station.save
       redirect_to @station
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -31,7 +31,7 @@ class StationsController < ApplicationController
     if @station.update(station_params)
       redirect_to @station
     else
-      render 'edit'
+      render "edit"
     end
   end
 
@@ -40,6 +40,14 @@ class StationsController < ApplicationController
     @station.destroy
     
     redirect_to stations_path
+  end
+
+  def show_trains(type)
+    
+  end
+
+  def send_train
+    
   end
 
   private

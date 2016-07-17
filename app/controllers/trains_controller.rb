@@ -1,6 +1,6 @@
 class TrainsController < ApplicationController
   def index
-    @trains = Train.all  
+    @trains = Train.all
   end
 
   def show
@@ -21,7 +21,7 @@ class TrainsController < ApplicationController
     if @train.save
       redirect_to @train
     else
-      render 'new'
+      render "new"
     end
   end
 
@@ -31,7 +31,7 @@ class TrainsController < ApplicationController
     if @train.update(train_params)
       redirect_to @train
     else
-      render 'edit'
+      render "edit"
     end   
   end
 
